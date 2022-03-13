@@ -2,6 +2,7 @@ const app = Vue.createApp({
   data() {
     return {
       cart: 0,
+<<<<<<< HEAD
       product: 'Socks',
       brand: 'Vue Mastery',
       selectedVariant: 0,
@@ -48,4 +49,10 @@ const app = Vue.createApp({
       return ''
     },
   },
+=======
+      premium: false,
+    }
+  },
+  methods: {},
+>>>>>>> L9-start
 })
