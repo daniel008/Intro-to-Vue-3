@@ -11,7 +11,9 @@ app.component('product-dispaly', {
     `<div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <img v-bind:src="image">
+            <img v-bind:src="image"
+            :class="{'out-of-stock-img': !inStock}"
+            >
           </div>
           <div class="product-info">
             <h1>{{ title }}</h1>
@@ -73,13 +75,10 @@ app.component('product-dispaly', {
       return this.variants[this.selectedVariant].image
     },
     inStock() {
-      return this.variants[this.selectedVariant].image
+      return this.variants[this.selectedVariant].quantity
     },
     shipping() {
-      if (this.premium) {
-        return 'Free'
-      }
-      return '2.99'
+      return this.premium ? 'Free' : '$2.99'
     },
   },
 })
